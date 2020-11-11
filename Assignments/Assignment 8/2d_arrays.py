@@ -1,5 +1,18 @@
 def sum_2d_array(two_d_array):
-    return sum(map(sum, two_d_array))
+    
+    one_d_array = []
+    
+    for x in range(len(two_d_array)):
+        
+        tot = 0
+        tot = sum(two_d_array[x])
+        ##for i in range(len(two_d_array[x])):
+            ##tot = tot + sum(two_d_array[int(x)])
+        ##I thought i could do it this way but was way over thinking it lol
+            
+        one_d_array.append(tot)
+
+    return one_d_array
     pass
 
 if __name__ == "__main__":
