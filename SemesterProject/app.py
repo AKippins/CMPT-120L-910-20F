@@ -1,11 +1,20 @@
+import flask
 from flask import Flask, render_template
 from flask.logging import create_logger
+from flask.logging import logging
 
 APP = Flask(__name__)
 
 ##An error is getting thrown that states "Method 'logger' has not 'info' member"
 ##Our friendly neighborhood google is only aiding me as if its the LOG for bugs and not routing.
 ##My suspicions for why it won't run is ALL HERE in the app.py file, and I can't figure it out.
+
+##UPDATE 12/13/2020 --> Note for Professor
+##My code was throwing a false positive that logger was missing the variable .info
+##I had to go into the settings.JSON file and add code to add info as a member despite it already being there.
+##I added this line of code below and it worked for me. 
+##"python.linting.pylintArgs": ["--generate-members"]
+
 @APP.route('/')
 def index():
     APP.logger.info("Switching to the Index Page")
